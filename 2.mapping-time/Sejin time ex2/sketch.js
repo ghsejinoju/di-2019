@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(720, 400);
+  createCanvas(700, 700);
 }
 
 // define global variables to hold the current rotation of each polygon across draw() calls
@@ -11,9 +11,9 @@ function draw() {
   var now = clock()
 
   // set rotational speed limits for each polygon independently
-  var hMax = PI/20;
-  var mMax = PI/20;
-  var sMax = PI/20;
+  var hMax = PI/40;
+  var mMax = PI/40;
+  var sMax = PI/40;
 
   // divide each time component by its range (to turn it into a 0-1.0 value) then
   // rotate the polygon by that percent of its max speed
@@ -21,38 +21,33 @@ function draw() {
   mRot += now.min/60 * mMax;
   sRot += now.sec/60 * sMax;
 
-  background(102, 70);
+  background('rgba(0,255,0, 0.1)');
   noStroke()
 
   /*hour*/
   push();
-  translate(width*0.2, height*0.5);
+  translate(width*0.25, height*0.25);
   rotate(hRot);
   fill(255);
-  polygon(0, 0, 82, 3);
+  polygon(0, 0, 180, 3);
   pop();
 
   /*time colons*/
-  push();
-  fill('black');
-  ellipse( 250, 180, 15, 15);
-  ellipse( 250, 210, 15, 15);
-  pop();
 
   /*minute*/
   push();
-  translate(width*0.5, height*0.5);
+  translate(width*0.55, height*0.55);
   rotate(mRot);
   fill(210);
-  polygon(0, 0, 70, 4);
+  polygon(0, 0, 90, 4);
   pop();
 
   /*second*/
   push();
-  translate(width*0.8, height*0.5);
+  translate(width*0.85, height*0.73);
   rotate(sRot);
   fill(180);
-  polygon(0, 0, 60, 5);
+  polygon(0, 0, 30, 5);
   pop();
 }
 
