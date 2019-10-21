@@ -50,7 +50,7 @@ circle(width/2,height/2,sizeSec)
 
 noFill()
 stroke(alldayColor);
-strokeWeight(2)
+strokeWeight(3)
 var pthour = pointAt(width/2, height/2, hourAngle, 84)
 arc(pthour.x, pthour.y, 190, 190, 0, TWO_PI)
 
